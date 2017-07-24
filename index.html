@@ -4,5 +4,14 @@
     </script>
 </head>
 <body>
+
+<p>I think the worstcase time complexity of my algorithm is N*M*L, where N and M are the height and width of the matrix and L is the length of the longest word that appears in both the matrix and the dictionary.  The similarity between that complexity and N cubed, worries me, but I did add the optimatization of failing fast on dictionary searches.  I created an interesting data structure which is a tree with many nodes underneath it. (Well, apparently there is nothing new under the sun, I looked it up and remembered that the data structure which I implemented, but not created, is called a Trie.)  Each letter of each word in the dictionary is inserted one at a time, so that the root nodes children are all of the first letters of all of the words, the childred of those nodes are all the second letters in each word, the children of those nodes are the third letters in the words and so on.  This means that the number of operations to check for whether a string appears in the dictionary is only as high as the number of letters of other words in the dictionary which match that string.  So, if there are no words in the dictionary that start with C the string CAT would only take one operation to exclude.  Also, we ignore false positives by rejecting CAT when CAT is not in the dicationary, but CATERPILLAR is.  Obviously, it must check all the letters in a word which appears in the dictionary.</p>
+<p>
+The best case time compexity is N*M, when you find a matirix composed of letters which do not appear at the start of any words in the dictionary.
+</p>
+
+<p>
+Please check the console log for output from the algorithm.
+</p>
 </body>
 </html>
